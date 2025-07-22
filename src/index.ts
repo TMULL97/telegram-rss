@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import Parser from 'rss-parser'
+import { serve } from '@hono/node-server'
 
 const app = new Hono()
 const parser = new Parser()
@@ -17,4 +18,7 @@ app.get('/feed', async (c) => {
   }
 })
 
-export default app
+serve({
+  fetch: app.fetch,
+  port: parseInt(process.env.PORT || '3000'),
+})
