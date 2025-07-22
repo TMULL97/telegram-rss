@@ -1,0 +1,22 @@
+{
+  "name": "telegram-rss",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "cross-env NODE_ENV=production tsx src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "hono": "^4.8.5",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.3",
+    "typescript": "^5.4.0",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
