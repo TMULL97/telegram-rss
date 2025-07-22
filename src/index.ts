@@ -1,9 +1,11 @@
 import { Hono } from 'hono'
-import Parser from 'rss-parser'
 import { serve } from '@hono/node-server'
+import Parser from 'rss-parser'
 
 const app = new Hono()
 const parser = new Parser()
+
+app.get('/', (c) => c.text('Telegram RSS is running'))
 
 app.get('/feed', async (c) => {
   const channel = c.req.query('channel')
